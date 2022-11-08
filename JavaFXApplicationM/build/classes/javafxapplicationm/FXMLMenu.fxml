@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplicationm.FXMLMenuController">
+   <children>
+      <AnchorPane layoutX="835.0" prefHeight="720.0" prefWidth="445.0" style="-fx-background-color: navy;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="950.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="buttonDelete" layoutX="45.0" layoutY="650.0" mnemonicParsing="false" onAction="#delete" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: red;" text="ΤΕΛΟΣ - ΔΙΑΓΡΑΦΗ" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonUpdate" layoutX="45.0" layoutY="603.0" mnemonicParsing="false" onAction="#edit" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: orange;" text="ΑΝΑΝΕΩΣΗ ΣΤΟΙΧΕΙΩΝ" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonAdd" layoutX="45.0" layoutY="555.0" mnemonicParsing="false" onAction="#addCalls" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: green;" text="ΠΡΟΣΘΗΚΗ" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="txtName" layoutX="64.0" layoutY="149.0" prefHeight="25.0" prefWidth="200.0" promptText="ΟΝΟΜΑ" AnchorPane.topAnchor="149.0" />
+            <TextField fx:id="txtSurname" layoutX="64.0" layoutY="184.0" prefHeight="25.0" prefWidth="200.0" promptText="ΕΠΩΝΥΜΟ" AnchorPane.topAnchor="184.0" />
+            <TextField fx:id="txtPhone" layoutX="64.0" layoutY="219.0" prefHeight="25.0" prefWidth="200.0" promptText="ΤΗΛΕΦΩΝΟ" AnchorPane.topAnchor="219.0" />
+            <TextField fx:id="txtCity" layoutX="65.0" layoutY="254.0" prefHeight="25.0" prefWidth="200.0" promptText="ΠΟΛΗ" AnchorPane.topAnchor="254.0" />
+            <TextField fx:id="txtAddress" layoutX="64.0" layoutY="289.0" prefHeight="25.0" prefWidth="200.0" promptText="ΠΕΡΙΟΧΗ" AnchorPane.topAnchor="289.0" />
+            <TextField fx:id="txtDivision" layoutX="65.0" layoutY="324.0" prefHeight="25.0" prefWidth="200.0" promptText="ΑΡΧΗ" AnchorPane.topAnchor="324.0" />
+            <TextArea fx:id="txtIncident" layoutX="66.0" layoutY="394.0" prefHeight="102.0" prefWidth="200.0" promptText="ΠΕΡΙΓΡΑΦΗ" AnchorPane.topAnchor="394.0" />
+            <Label layoutX="34.0" layoutY="83.0" text="ΠΡΟΣΘΗΚΗ ΝΕΟΥ ΠΕΡΙΣΤΑΤΙΚΟΥ" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtID" editable="false" layoutX="64.0" layoutY="116.0" prefHeight="25.0" prefWidth="67.0" promptText="ID" />
+            <Button fx:id="buttonEmpty" layoutX="117.0" layoutY="502.0" mnemonicParsing="false" onAction="#empty" prefHeight="25.0" prefWidth="96.0" text="Εκκαθάριση" />
+            <Label layoutX="143.0" layoutY="120.0" text="*Συμπληρώνεται αυτόματα" textFill="WHITE" />
+            <TextField fx:id="txtTime" layoutX="64.0" layoutY="360.0" prefHeight="25.0" prefWidth="200.0" promptText="ΩΡΑ" />
+         </children></AnchorPane>
+      <AnchorPane layoutX="514.0" prefHeight="62.0" prefWidth="1280.0" style="-fx-background-color: crimson;" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="50.0" layoutY="22.0" text="ΚΑΤΑΛΟΓΟΣ ΠΕΡΙΣΤΑΤΙΚΩΝ ΕΚΤΑΚΤΗΣ ΑΝΑΓΚΗΣ" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonLogout" layoutX="1181.0" layoutY="23.0" mnemonicParsing="false" onAction="#logout" text="Αποσύνδεση" />
+            <ComboBox fx:id="comboDivision" layoutX="685.0" layoutY="36.0" onAction="#selectCombo" prefHeight="25.0" prefWidth="240.0" />
+            <Label layoutX="785.0" layoutY="11.0" prefHeight="22.0" prefWidth="40.0" text="Αρχή:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label fx:id="labelUsername" layoutX="1124.0" layoutY="28.0" text="Label" textFill="WHITE" />
+         </children></AnchorPane>
+      <TableView fx:id="tableUsers" layoutX="34.0" layoutY="86.0" onMouseClicked="#getSelected" prefHeight="650.0" prefWidth="902.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="70.0">
+        <columns>
+          <TableColumn fx:id="col_ID" prefWidth="40.0" text="ID" />
+          <TableColumn fx:id="col_name" minWidth="0.0" prefWidth="91.0" text="ΟΝΟΜΑ" />
+            <TableColumn fx:id="col_surname" prefWidth="102.0" text="ΕΠΩΝΥΜΟ" />
+            <TableColumn fx:id="col_phone" minWidth="0.0" prefWidth="84.0" text="ΤΗΛ" />
+            <TableColumn fx:id="col_city" minWidth="0.0" prefWidth="98.0" text="ΠΟΛΗ" />
+            <TableColumn fx:id="col_address" minWidth="0.0" prefWidth="152.0" text="ΠΕΡΙΟΧΗ" />
+            <TableColumn fx:id="col_division" minWidth="0.0" prefWidth="55.0" text="ΑΡΧΗ" />
+            <TableColumn fx:id="col_time" prefWidth="82.0" text="ΩΡΑ" />
+            <TableColumn fx:id="col_incident" prefWidth="245.0" text="ΠΕΡΙΓΡΑΦΗ" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
